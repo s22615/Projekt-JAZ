@@ -1,18 +1,34 @@
 package com.edu.pjatk.demo.data;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table
 public class samochod {
+    @Id
+    @Column(nullable = false, length = 7, name = "nr_rejestracyjny")
     String nr_rejestracyjny;
+
+    @Column(nullable = false, length = 32, name = "marka")
     String marka;
+
+    @Column(nullable = false, length = 32, name = "model")
     String model;
+
+    @Column(length = 16, name = "rocznik")
     int rocznik;
+
+    @Column(length = 6, name = "przebieg")
     int przebieg;
+
+    @Column(length = 4, name = "pojemnosc_skokowa")
     int pojemnosc_skokowa;
+
+    @Column(length = 16, name = "kolor")
     String kolor;
+
+    // make foreign keys with onetoone anno etc.
+    @Column(nullable = false, name = "id_wlasciciela")
     int id_wlasciciela;
 
     public String getNr_rejestracyjny() {

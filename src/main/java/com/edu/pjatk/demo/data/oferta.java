@@ -1,24 +1,31 @@
 package com.edu.pjatk.demo.data;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "oferta")
 public class oferta {
     @Id
-    int oferta;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_oferty")
+    int id_oferty;
+
+    @Column(nullable = false, name = "cena")
     float cena;
+
+    @Column(nullable = false, length = 10, name = "data_wystawienia")
     String data_wystawienia;
+
+    // make foreign keys with onetoone anno etc.
+    @Column(nullable = false, length = 7, name = "nr_rejestracyjny")
     String nr_rejestracyjny;
 
-    public int getOferta() {
-        return oferta;
+    public int getId_oferty() {
+        return id_oferty;
     }
 
-    public void setOferta(int oferta) {
-        this.oferta = oferta;
+    public void setId_oferty(int oferta) {
+        this.id_oferty = oferta;
     }
 
     public float getCena() {

@@ -1,16 +1,22 @@
 package com.edu.pjatk.demo.data;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "adres")
 public class adress {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_adres")
     public int id_adres;
+
+    @Column(nullable = false, length = 6, name = "kod_pocztowy")
     String kod_pocztowy;
+
+    @Column(length = 32, name = "miasto")
     String miasto;
+
+    @Column(length = 32, name = "ulica")
     String ulica;
 
     public int getId_adres() {
