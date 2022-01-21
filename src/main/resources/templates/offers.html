@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" xmlns:th="http://www.thymeleaf.org">
+    <title>MainPage</title>
+    <link rel="stylesheet" href="text/css" th:href="@{/webjars/bootstrap/css/boostrap.min.css}">
+</head>
+<body>
+<div>
+    <h1>Hi, user!</h1>
+    <h2>Look what people selling!</h2>
+</div>
+<div>
+    <table class="table table-bordered">
+        <thead class="thead-light">
+            <tr>
+                <th>offer_id</th>
+                <th>prize</th>
+                <th>start_date</th>
+                <th>car_id</th>
+                <th>client_id</th>
+            </tr>
+        </thead>
+        <tbody>
+            <th:block th:each="offer: ${offersList}">
+                <tr>
+                    <td>[[${offer.offer_id}]]</td>
+                    <td>[[${offer.prize}]]</td>
+                    <td>[[${offer.start_date}]]</td>
+                    <td>[[${offer.car_id}]]</td>
+                    <td>[[${offer.client_id}]]</td>
+                </tr>
+            </th:block>
+        </tbody>
+    </table>
+</div>
+
+</body>
+</html>
