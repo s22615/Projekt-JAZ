@@ -3,17 +3,18 @@ package com.edu.pjatk.demo.data;
 import lombok.Getter;
 import lombok.Setter;
 import javax.persistence.*;
+import java.sql.Date;
 
 @Getter
 @Setter
 @Entity
 @Table(name = "klient")
-public class client {
+public class Client {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_klienta")
-    private Integer client_id;
+    private int client_id;
 
     @Column(nullable = false, length = 32, name = "imie")
     private String name;
@@ -28,7 +29,7 @@ public class client {
     private String phone_number;
 
     @Column(nullable = false, length = 10, name = "data_urodzenia")
-    private String birth_date;
+    private Date birth_date;
 
     @Column(nullable = false, length = 6, name = "kod_pocztowy")
     private String postal_code;

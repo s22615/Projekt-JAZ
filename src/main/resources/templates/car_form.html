@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Add New Car</title>
+    <link rel="stylesheet" href="text/css" th:href="@{/webjars/bootstrap/css/boostrap.min.css}">
+</head>
+<body>
+<div class="container-fluid">
+    <h2>Add Car</h2>
+    <form th:action="@{/cars/save}" method="post" th:object="${car}">
+        <label class="col-form-label">Registration_number</label>
+        <input type="text" th:field="*{registration_number}" class="form-control">
+        <label class="col-form-label">Brand</label>
+        <input type="text" th:field="*{brand}" class="form-control">
+        <label class="col-form-label">Model</label>
+        <input type="text" th:field="*{model}" class="form-control">
+        <label class="col-form-label">Production_date</label>
+        <input type="text" th:field="*{production_date}" class="form-control">
+        <label class="col-form-label">Mileage</label>
+        <input type="text" th:field="*{mileage}" class="form-control">
+        <label class="col-form-label">Cylinder_capacity</label>
+        <input type="text" th:field="*{cylinder_capacity}" class="form-control">
+        <label class="col-form-label">Color</label>
+        <input type="text" th:field="*{color}" class="form-control">
+        <button type="submit">Save</button>
+        <button type="button"><a th:href="@{/offers}">Cancel</a></button>
+    </form>
+    </th:block>
+</div>
+</body>
+</html>

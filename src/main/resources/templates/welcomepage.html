@@ -1,12 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8" xmlns:th="http://www.thymeleaf.org">
+    <meta charset="UTF-8" >
     <title>WelcomePage</title>
     <link rel="stylesheet" href="text/css" th:href="@{/webjars/bootstrap/css/boostrap.min.css}">
 </head>
 <body>
     <p>Welcome on our site</p>
-    <a th:href="@{/oferty}">If you want to check what we got click here</a>
+    <a th:href="@{/offers}">If you want to check what we got click here!</a>
+    <a th:href="@{/clients/new}">If you want to add your offer click here!</a>
 </body>
 </html>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8" xmlns:th="http://www.thymeleaf.org">
+    <meta charset="UTF-8" >
     <title>MainPage</title>
     <link rel="stylesheet" href="text/css" th:href="@{/webjars/bootstrap/css/boostrap.min.css}">
 </head>
@@ -9,6 +9,7 @@
 <div>
     <h1>Hi, user!</h1>
     <h2>Look what people selling!</h2>
+    <a th:href="@{/clients/new}">If you want to add your offer click here!</a>
 </div>
 <div>
     <table class="table table-bordered">
@@ -29,6 +30,10 @@
                     <td>[[${offer.start_date}]]</td>
                     <td>[[${offer.car_id}]]</td>
                     <td>[[${offer.client_id}]]</td>
+                    <td>
+                        <a class="h4" th:href="@{'/offers/edit/' + ${offer.offer_id}}">Edit</a>
+                        <a class="h4" th:href="@{'/offers/delete/' + ${offer.offer_id}}">Delete</a>
+                    </td>
                 </tr>
             </th:block>
         </tbody>
