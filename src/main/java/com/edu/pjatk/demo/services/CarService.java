@@ -24,4 +24,8 @@ public class CarService {
         long count = listAll().stream().count();
         return listAll().stream().skip(count - 1).findFirst().get().getCar_id();
     }
+
+    public Car findCarById(Integer id){
+        return carRepository.findById(id).get();
+    }
 }

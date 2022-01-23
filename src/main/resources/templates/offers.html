@@ -34,6 +34,10 @@
                         <a class="h4" th:href="@{'/offers/edit/' + ${offer.offer_id}}">Edit</a>
                         <a class="h4" th:href="@{'/offers/delete/' + ${offer.offer_id}}">Delete</a>
                     </td>
+                    <td>
+                        <a th:href="@{/cars/getCar/{id}(id=${offer.car_id})}">Car_info</a>
+                        <a th:href="@{/clients/getClient/{id}(id=${offer.client_id})}">Client_info</a>
+                    </td>
                 </tr>
             </th:block>
         </tbody>

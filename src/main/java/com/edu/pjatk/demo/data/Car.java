@@ -12,7 +12,7 @@ public class Car {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_samochodu")
-    private int car_id;
+    private Integer car_id;
 
     @Column(nullable = false, length = 8, name = "numer_rejestracyjny")
     private String registration_number;
@@ -30,7 +30,7 @@ public class Car {
     private int mileage;
 
     @Column(nullable = false,length = 4, name = "pojemnosc_skokowa")
-    private int cylinder_capacity;
+    private float cylinder_capacity;
 
     @Column(nullable = false,length = 16, name = "kolor")
     private String color;

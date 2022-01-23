@@ -6,6 +6,34 @@
     <link rel="stylesheet" href="text/css" th:href="@{/webjars/bootstrap/css/boostrap.min.css}">
 </head>
 <body>
-<p>carinfo</p>
+<p>Car_info</p>
+<div>
+    <table>
+        <thead>
+            <tr>
+                <th>Registration_number</th>
+                <th>Brand</th>
+                <th>Model</th>
+                <th>Production_date</th>
+                <th>Mileage</th>
+                <th>Cylinder_capacity</th>
+                <th>Color</th>
+            </tr>
+        </thead>
+        <tbody>
+        <th:block th:each="car: ${car}">
+            <tr>
+                <td>[[${car.registration_number}]]</td>
+                <td>[[${car.brand}]]</td>
+                <td>[[${car.model}]]</td>
+                <td>[[${car.production_date}]]</td>
+                <td>[[${car.mileage}]]</td>
+                <td>[[${car.cylinder_capacity}]]</td>
+                <td>[[${car.color}]]</td>
+            </tr>
+        </th:block>
+        </tbody>
+    </table>
+</div>
 </body>
 </html>

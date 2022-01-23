@@ -2,10 +2,32 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>clientinfo</title>
+    <title>carinfo</title>
     <link rel="stylesheet" href="text/css" th:href="@{/webjars/bootstrap/css/boostrap.min.css}">
 </head>
 <body>
-<p>clientinfo</p>
+<p>Client_info</p>
+<div>
+    <table>
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Surname</th>
+            <th>Phone_number</th>
+            <th>City</th>
+        </tr>
+        </thead>
+        <tbody>
+        <th:block th:each="client: ${client}">
+            <tr>
+                <td>[[${client.name}]]</td>
+                <td>[[${client.surname}]]</td>
+                <td>[[${client.phone_number}]]</td>
+                <td>[[${client.city}]]</td>
+            </tr>
+        </th:block>
+        </tbody>
+    </table>
+</div>
 </body>
 </html>

@@ -8,8 +8,8 @@
 <body>
     <h2>Add offer</h2>
         <form th:action="@{/offers/save}" method="post" th:object="${offer}">
-<!--            <label class="col-form-label">offer_id</label>-->
-<!--            <input type="text" th:field="*{offer_id}" class="form-control">-->
+
+            <input type="hidden" th:field="*{offer_id}">
             <label class="col-form-label">Prize</label>
             <input type="text" th:field="*{prize}" class="form-control">
             <label class="col-form-label">Start_date</label>

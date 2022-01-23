@@ -25,4 +25,8 @@ public class ClientService {
         long count = listAll().stream().count();
         return listAll().stream().skip(count - 1).findFirst().get().getClient_id();
     }
+
+    public Client findClientById(Integer id) {
+        return clientRepository.findById(id).get();
+    }
 }
