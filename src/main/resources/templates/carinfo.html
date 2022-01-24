@@ -3,37 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <title>carinfo</title>
-    <link rel="stylesheet" href="text/css" th:href="@{/webjars/bootstrap/css/boostrap.min.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}">
 </head>
 <body>
-<p>Car_info</p>
-<div>
-    <table>
-        <thead>
-            <tr>
-                <th>Registration_number</th>
-                <th>Brand</th>
-                <th>Model</th>
-                <th>Production_date</th>
-                <th>Mileage</th>
-                <th>Cylinder_capacity</th>
-                <th>Color</th>
-            </tr>
-        </thead>
-        <tbody>
-        <th:block th:each="car: ${car}">
-            <tr>
-                <td>[[${car.registration_number}]]</td>
-                <td>[[${car.brand}]]</td>
-                <td>[[${car.model}]]</td>
-                <td>[[${car.production_date}]]</td>
-                <td>[[${car.mileage}]]</td>
-                <td>[[${car.cylinder_capacity}]]</td>
-                <td>[[${car.color}]]</td>
-            </tr>
-        </th:block>
-        </tbody>
-    </table>
+<div class="ui-menu">
+    <a class="ui-menu-item p-5 link-dark" th:href="@{/}">Home</a>
+</div>
+<div class="text-center">
+    <p class="fs-1 fw-bold">Car_info</p>
+    <div>
+        <table class="table table-dark">
+            <thead>
+                <tr>
+                    <th scope="col">Registration_number</th>
+                    <th scope="col">Brand</th>
+                    <th scope="col">Model</th>
+                    <th scope="col">Production_date</th>
+                    <th scope="col">Mileage</th>
+                    <th scope="col">Cylinder_capacity</th>
+                    <th scope="col">Color</th>
+                </tr>
+            </thead>
+            <tbody>
+            <th:block th:each="car: ${car}">
+                <tr>
+                    <td>[[${car.registration_number}]]</td>
+                    <td>[[${car.brand}]]</td>
+                    <td>[[${car.model}]]</td>
+                    <td>[[${car.production_date}]]</td>
+                    <td>[[${car.mileage}]]</td>
+                    <td>[[${car.cylinder_capacity}]]</td>
+                    <td>[[${car.color}]]</td>
+                </tr>
+            </th:block>
+            </tbody>
+        </table>
+    </div>
 </div>
 </body>
 </html>

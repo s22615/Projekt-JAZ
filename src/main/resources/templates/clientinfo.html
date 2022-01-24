@@ -3,31 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <title>carinfo</title>
-    <link rel="stylesheet" href="text/css" th:href="@{/webjars/bootstrap/css/boostrap.min.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}">
 </head>
 <body>
-<p>Client_info</p>
-<div>
-    <table>
-        <thead>
-        <tr>
-            <th>Name</th>
-            <th>Surname</th>
-            <th>Phone_number</th>
-            <th>City</th>
-        </tr>
-        </thead>
-        <tbody>
-        <th:block th:each="client: ${client}">
+<div class="ui-menu">
+    <a class="ui-menu-item p-5 link-dark" th:href="@{/}">Home</a>
+</div>
+<div class="text-center">
+    <p class="fs-1 fw-bold">Client_info</p>
+    <div>
+        <table class="table table-dark">
+            <thead>
             <tr>
-                <td>[[${client.name}]]</td>
-                <td>[[${client.surname}]]</td>
-                <td>[[${client.phone_number}]]</td>
-                <td>[[${client.city}]]</td>
+                <th scope="col">Name</th>
+                <th scope="col">Surname</th>
+                <th scope="col">Phone_number</th>
+                <th scope="col">City</th>
             </tr>
-        </th:block>
-        </tbody>
-    </table>
+            </thead>
+            <tbody>
+            <th:block th:each="client: ${client}">
+                <tr>
+                    <td>[[${client.name}]]</td>
+                    <td>[[${client.surname}]]</td>
+                    <td>[[${client.phone_number}]]</td>
+                    <td>[[${client.city}]]</td>
+                </tr>
+            </th:block>
+            </tbody>
+        </table>
+    </div>
 </div>
 </body>
 </html>

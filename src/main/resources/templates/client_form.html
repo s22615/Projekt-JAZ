@@ -3,31 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <title>Add New Client</title>
-    <link rel="stylesheet" href="text/css" th:href="@{/webjars/bootstrap/css/boostrap.min.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}">
 </head>
-<body>
-<div class="container-fluid">
-    <h2>Add Client</h2>
+<body class="text-center">
+<div class="container-fluid w-25">
+    <p class="fs-1 fw-bold">Add Client</p>
     <form th:action="@{/clients/save}" method="post" th:object="${client}">
 <!--        <input type="text" th:field="*{client_id}" class="form-control">-->
+        <div class="form-outline mb-4">
         <label class="col-form-label">Name</label>
         <input type="text" th:field="*{name}" class="form-control">
+        </div>
+        <div class="form-outline mb-4">
         <label class="col-form-label">Surname</label>
         <input type="text" th:field="*{surname}" class="form-control">
+        </div>
+        <div class="form-outline mb-4">
         <label class="col-form-label">Pesel</label>
         <input type="text" th:field="*{pesel}" class="form-control">
+        </div>
+        <div class="form-outline mb-4">
         <label class="col-form-label">Phone_number</label>
         <input type="text" th:field="*{phone_number}" class="form-control">
+        </div>
+        <div class="form-outline mb-4">
         <label class="col-form-label">Birth_date</label>
         <input type="date" th:field="*{birth_date}" class="form-control">
+        </div>
+        <div class="form-outline mb-4">
         <label class="col-form-label">Postal_code</label>
         <input type="text" th:field="*{postal_code}" class="form-control">
+        </div>
+        <div class="form-outline mb-4">
         <label class="col-form-label">City</label>
         <input type="text" th:field="*{city}" class="form-control">
+        </div>
+        <div class="form-outline mb-4">
         <label class="col-form-label">Street</label>
         <input type="text" th:field="*{street}" class="form-control">
-        <button type="submit">Save</button>
-        <button type="button"><a th:href="@{/offers}">Cancel</a></button>
+        </div>
+        <button class="btn btn-primary bg-dark text-white" type="submit">Save</button>
+        <button class="btn btn-primary bg-dark text-white" type="button"><a th:href="@{/offers}">Cancel</a></button>
     </form>
     </th:block>
 </div>

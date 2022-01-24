@@ -3,11 +3,15 @@
 <head>
     <meta charset="UTF-8" >
     <title>WelcomePage</title>
-    <link rel="stylesheet" href="text/css" th:href="@{/webjars/bootstrap/css/boostrap.min.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}">
 </head>
-<body>
-    <p>Welcome on our site</p>
-    <a th:href="@{/offers}">If you want to check what we got click here!</a>
-    <a th:href="@{/clients/new}">If you want to add your offer click here!</a>
+<body class="text-center">
+    <p class="fs-1 fw-bold">Welcome on our site</p>
+    <div class="text-center w-100">
+        <ul class="list-group">
+            <li class="list-group-item"><a class="link-dark" th:href="@{/offers}">If you want to check what we got click here!</a></li>
+            <li class="list-group-item"><a class="link-dark" th:href="@{/clients/new}">If you want to add your offer click here!</a></li>
+        </ul>
+    </div>
 </body>
 </html>

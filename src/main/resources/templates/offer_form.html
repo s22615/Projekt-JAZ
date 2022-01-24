@@ -3,23 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <title>Add New Offer</title>
-    <link rel="stylesheet" href="text/css" th:href="@{/webjars/bootstrap/css/boostrap.min.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}">
 </head>
-<body>
-    <h2>Add offer</h2>
+<body class="text-center">
+<div class="container-fluid w-25">
+    <p class="fs-1 fw-bold">Add offer</p>
         <form th:action="@{/offers/save}" method="post" th:object="${offer}">
 
             <input type="hidden" th:field="*{offer_id}">
+            <div class="form-outline mb-4">
             <label class="col-form-label">Prize</label>
             <input type="text" th:field="*{prize}" class="form-control">
+            </div>
+            <div class="form-outline mb-4">
             <label class="col-form-label">Start_date</label>
             <input type="date" th:field="*{start_date}" class="form-control">
+            </div>
 <!--            <label class="col-form-label">Car_id</label>-->
 <!--            <input type="text" th:field="*{car_id}" class="form-control">-->
 <!--            <label class="col-form-label">Client_id</label>-->
 <!--            <input type="text" th:field="*{client_id}" class="form-control">-->
-            <button type="submit">Save</button>
-            <button type="button"><a th:href="@{/offers}">Cancel</a></button>
+            <button class="btn btn-primary bg-dark text-white" type="submit">Save</button>
+            <button class="btn btn-primary bg-dark text-white" type="button"><a th:href="@{/offers}">Cancel</a></button>
         </form>
+</div>
 </body>
 </html>

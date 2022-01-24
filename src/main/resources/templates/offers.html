@@ -1,48 +1,53 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8" >
+    <meta charset="UTF-8">
     <title>MainPage</title>
-    <link rel="stylesheet" href="text/css" th:href="@{/webjars/bootstrap/css/boostrap.min.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}">
 </head>
-<body>
+<body class="text-center">
 <div>
-    <h1>Hi, user!</h1>
-    <h2>Look what people selling!</h2>
-    <a th:href="@{/clients/new}">If you want to add your offer click here!</a>
+    <p class="fs-1 fw-bold">Hi, user!</p>
+    <p class="fs-2">Look what people selling!</p>
+    <div class="p-2">
+        <a class="text-black " th:href="@{/clients/new}">If you want to add your offer click here!</a>
+    </div>
 </div>
-<div>
-    <table class="table table-bordered">
-        <thead class="thead-light">
+<div class="container-fluid text-center">
+    <div>
+    <table class="table table-dark">
+        <thead>
             <tr>
-                <th>offer_id</th>
-                <th>prize</th>
-                <th>start_date</th>
-                <th>car_id</th>
-                <th>client_id</th>
+                <th scope="col">offer_id</th>
+                <th scope="col">prize</th>
+                <th scope="col">start_date</th>
+                <th scope="col">car_id</th>
+                <th scope="col">client_id</th>
+                <th scope="col"></th>
+                <th scope="col"></th>
             </tr>
         </thead>
         <tbody>
-            <th:block th:each="offer: ${offersList}">
-                <tr>
-                    <td>[[${offer.offer_id}]]</td>
-                    <td>[[${offer.prize}]]</td>
-                    <td>[[${offer.start_date}]]</td>
-                    <td>[[${offer.car_id}]]</td>
-                    <td>[[${offer.client_id}]]</td>
-                    <td>
-                        <a class="h4" th:href="@{'/offers/edit/' + ${offer.offer_id}}">Edit</a>
-                        <a class="h4" th:href="@{'/offers/delete/' + ${offer.offer_id}}">Delete</a>
-                    </td>
-                    <td>
-                        <a th:href="@{/cars/getCar/{id}(id=${offer.car_id})}">Car_info</a>
-                        <a th:href="@{/clients/getClient/{id}(id=${offer.client_id})}">Client_info</a>
-                    </td>
-                </tr>
-            </th:block>
+        <th:block th:each="offer: ${offersList}">
+            <tr>
+                <th scope="row">[[${offer.offer_id}]]</th>
+                <td>[[${offer.prize}]]</td>
+                <td>[[${offer.start_date}]]</td>
+                <td>[[${offer.car_id}]]</td>
+                <td>[[${offer.client_id}]]</td>
+                <td>
+                    <a class="btn btn-primary bg-white text-black" th:href="@{'/offers/edit/' + ${offer.offer_id}}">Edit</a>
+                    <a class="btn btn-primary bg-white text-black" th:href="@{'/offers/delete/' + ${offer.offer_id}}">Delete</a>
+                </td>
+                <td>
+                    <a class="btn btn-primary bg-white text-black" th:href="@{/cars/getCar/{id}(id=${offer.car_id})}">Car_info</a>
+                    <a class="btn btn-primary bg-white text-black" th:href="@{/clients/getClient/{id}(id=${offer.client_id})}">Client_info</a>
+                </td>
+            </tr>
+        </th:block>
         </tbody>
     </table>
+    </div>
 </div>
-
 </body>
 </html>
